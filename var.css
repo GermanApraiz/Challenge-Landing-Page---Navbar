@@ -143,12 +143,12 @@
 
   /*footer*/
   .sec-map {
-    width: 80%;
+    width: 55%;
     height: 210px;
   }
 
   .sec-map iframe {
-    width: 80%;
+    width: 100%;
     height: 190px;
   }
 }
