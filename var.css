@@ -1,0 +1,157 @@
+@media (max-width: 992px) {
+  /*hero*/
+  #hero {
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .hero-info {
+    width: 100%;
+    order: 2;
+  }
+
+  .hero-info h1 {
+    width: 90%;
+    max-width: 500px;
+    min-width: unset;
+  }
+
+  .hero-info p {
+    width: 60%;
+    max-width: 600px;
+  }
+
+  .hero-card {
+    order: 1;
+  }
+
+  /*nav*/
+  .navbar ul {
+    background: var(--background-easy);
+    width: 40vw;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 40px;
+    box-shadow: 0 8px 8px var(--box-shadow);
+    display: none;
+    border-bottom-left-radius: 15px;
+  }
+
+  .navbar i {
+    display: block;
+  }
+
+  #toggle-menu:checked ~ .navbar-list {
+    display: flex;
+  }
+
+  /*cards*/
+
+  .container-section h2 {
+    width: 80%;
+    text-align: center;
+  }
+
+  .container-cards {
+    max-width: 80%;
+    text-align: center;
+  }
+
+  /*contact-form*/
+  .reservas-titulos {
+    text-align: center;
+  }
+}
+
+/*============max-width: 768px=======*/
+/*===================================*/
+@media (max-width: 768px) {
+  /*contact-form*/
+  .reservas {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .container-box {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /*footer*/
+  .sec-map {
+    order: 2;
+  }
+
+  .box-card {
+    height: 150px;
+  }
+
+  .red-social {
+    flex-direction: row;
+  }
+}
+
+/*=======max-width: 576=========*/
+/*==============================*/
+@media (max-width: 576px) {
+  /*hero*/
+  .hero-info h1 {
+    font-size: 28px;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+
+  /*nav*/
+  .navbar ul {
+    width: 100vw;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  /*card*/
+  .card {
+    overflow-y: scroll;
+  }
+
+  /*contact-form*/
+  .reservas-titulos {
+    font: 0.9rem;
+  }
+
+  .loginbox {
+    width: 100%;
+  }
+
+  form input {
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--text-white);
+    padding: 8px;
+  }
+
+  /*footer*/
+  .sec-map {
+    width: 80%;
+    height: 210px;
+  }
+
+  .sec-map iframe {
+    width: 80%;
+    height: 190px;
+  }
+}

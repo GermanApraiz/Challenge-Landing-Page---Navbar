@@ -8,10 +8,23 @@
 }
 
 :root {
+  /*background*/
   --background-hard: rgb(210, 174, 243);
   --background-easy: rgb(208, 201, 212);
+  --background-footer: #0a141d;
+  --background-loginbox: rgba(26, 26, 26, 0.5);
+
+  /*boxShadow*/
+  --box-shadow: rgba(0, 0, 0, 0.3);
+  --box-shadow-submitForm: inset 0px 0px 4px 2px rgb(32, 23, 84);
+  --text-shadow-grey: 2px 2px 2px rgb(76, 75, 77);
+  --text-shadow-violet: 1px 2px 2px black, 0 0 25px blue, 0 0 5px;
+  --hover-violet: rgb(73, 47, 219);
+
+  /*text*/
   --textGrey: #4d4f4d;
   --orange: rgb(243, 135, 34);
+  --text-white: white;
 }
 
 /*===main==hero==*/
@@ -19,55 +32,53 @@
 main {
   background: var(--background-hard);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
-  width: 100%;
+  align-items: center;
+  color: var(--text-white);
+  width: 100vw;
 }
 
 #hero {
-  padding: 70px 0;
-  max-width: 1200px;
+  padding: 60px;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding: 70px 0;
   gap: 30px;
 }
 
 .hero-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   width: 50%;
-  display: flex;
+  text-align: center;
 }
 
 .hero-info h1 {
   font-size: 36px;
-  width: 80%;
-  min-width: 500px;
   font-weight: 800;
   color: var(--textGrey);
 }
 
 .hero-info p {
-  font-size: 1.5rem;
+  font-size: 18px;
   width: 70%;
-  color: aliceblue;
+  color: var(--text-white);
 }
 
 .hero-info a {
   color: var(--textGrey);
   background-color: var(--orange);
-  box-shadow: inset 3px 3px 8px rgb(164, 109, 41);
+  box-shadow: inset 0px 0px 4px 2px rgb(185, 114, 15);
   width: 120px;
-  height: 60px;
+  height: 50px;
   padding: 8px 0px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
   text-align: center;
 }
@@ -79,18 +90,19 @@ main {
 }
 
 .hero-card {
-  width: 700px;
+  width: 50%;
+  max-width: 600px;
   background: var(--orange);
   padding: 20px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
   position: relative;
 }
 
 .hero-card img {
+  max-width: 600px;
   border-radius: 10px;
 }
 
@@ -107,68 +119,71 @@ main {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100px;
+  width: 100vw;
   padding: 0 50px;
   background: linear-gradient(
     0deg,
-    rgb(208, 201, 212) 0%,
-    rgb(210, 174, 243) 100%
+    var(--background-easy) 0%,
+    var(--background-hard) 100%
   );
-  box-shadow: 0 -8px 10px rgba(0, 0, 0, 0.3), 0 8px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -8px 10px var(--box-shadow), 0 8px 8px var(--box-shadow);
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .logo {
   margin: 40px;
-  display: flex;
   align-items: center;
   cursor: pointer;
-}
-
-.logo img {
   height: 50px;
 }
 
-.logo img:hover {
+.logo:hover {
   transform: scale(1.2);
   transition: all 0.3s ease;
 }
 
-nav {
+.navbar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-nav i {
+.navbar i {
   font-size: 36px;
-  color: white;
+  color: var(--text-white);
   display: none;
 }
 
-.nav-links li {
+#toggle-menu {
+  display: none;
+}
+
+.navbar-list li {
   display: inline-block;
   padding: 0 20px;
 }
 
-.nav-links li:hover {
+.navbar-list li:hover {
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
-.nav-links a {
+.navbar-list a {
   font-size: 20px;
-  color: white;
-  text-shadow: 2px 2px 2px rgb(76, 75, 77);
+  color: var(--text-white);
+  text-shadow: var(--text-shadow-grey);
   text-decoration: none;
   font-weight: 550;
   padding: 10px;
   transition: all 1s ease;
 }
 
-.nav-links a:hover {
-  color: rgb(122, 93, 229);
+.navbar-list a:hover {
+  color: var(--hover-violet);
   text-shadow: 2px 2px 2px rgb(159, 139, 233);
 }
 
@@ -180,45 +195,223 @@ nav i {
   background: var(--background-easy);
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 60px;
   padding-top: 50px;
-  color: white;
-  width: 100%;
+  padding-bottom: 100px;
+  color: var(--text-white);
+  width: 100vw;
 }
 
 .container-section h2 {
   font-size: 3rem;
+  font-weight: 800;
   color: var(--textGrey);
+  text-align: center;
 }
 
 .container-cards {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .card {
   background-color: var(--orange);
-  height: 30vh;
+  width: 300px;
+  height: 300px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   font-size: 1.2rem;
-  padding: 15px;
-  width: 30%;
+  padding: 20px;
   border-radius: 10px;
 }
 
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--textGrey);
 }
 
-@media screen and (max-width: 1020px) {
-  nav {
-    display: flex;
-    flex-wrap: wrap;
+.card p {
+  font-size: 16px;
+}
 
-    padding: 0 20px;
-  }
+/*=====ContactForm======*/
+.reservas {
+  background: linear-gradient(
+    0deg,
+    var(--background-hard) 0%,
+    var(--background-easy) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 80px 30px;
+}
+
+.reservas-titulos {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  font: 1.5em sans-serif;
+  text-shadow: var(--text-shadow-violet);
+  color: var(--text-white);
+  gap: 50px;
+}
+
+.loginbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-loginbox);
+  width: 400px;
+  height: 700px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  border-radius: 5px;
+  border: none;
+}
+
+.loginbox h2 {
+  color: var(--text-white);
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-white);
+}
+
+.user {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: calc(-100px / 2);
+  left: calc(50% - 50px);
+}
+
+.loginbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 100px;
+  font-size: 20px;
+  color: var(--text-white);
+  background-color: var(--text-shadow-violet);
+  box-shadow: inset 0px 0px 4px 3px rgb(108, 72, 241);
+  cursor: pointer;
+  border-radius: 80px;
+}
+
+.loginbox input[type="submit"]:hover {
+  background: rgb(152, 130, 233);
+  color: var(--hover-violet);
+  box-shadow: var(--box-shadow-submitForm);
+}
+
+/*=====footer=====*/
+
+.pie-pagina {
+  width: 100vw;
+  background-color: var(--background-footer);
+}
+
+.container-box {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 45px 0px;
+}
+
+.sec-map {
+  width: 510px;
+  height: 330px;
+  background-color: var(--text-white);
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec-map iframe {
+  width: 500px;
+  height: 300px;
+}
+
+.box-card {
+  padding: 30px;
+  height: 330px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box-card h2 {
+  text-align: center;
+  color: var(--text-white);
+  text-shadow: var(--text-shadow-grey);
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.red-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.red-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: var(--text-white);
+  background-color: #0d2033;
+  border-radius: 5px;
+}
+
+.red-social a:hover {
+  background: rgb(152, 130, 233);
+  color: rgb(73, 47, 219);
+  box-shadow: inset 0px 0px 4px 2px rgb(47, 27, 157);
+  cursor: pointer;
+}
+
+.container-box2 {
+  background-color: var(--background-footer);
+  padding: 15px 10px;
+  text-align: center;
+  color: var(--text-white);
+}
+
+.container-box2 small {
+  font-size: 15px;
 }

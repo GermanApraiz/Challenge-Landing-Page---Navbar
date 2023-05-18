@@ -13,6 +13,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="var.css" />
     <link rel="icon" type="image/jpg" href="img/lj.jpg" />
     <title id="logo juana">juana viajes</title>
   </head>
@@ -41,18 +42,17 @@
 
     <!--nav-->
     <header class="header">
-      <div class="logo">
-        <img src="img/juana.png" alt="logo de juana" />
-      </div>
-      <nav>
-        <label for="toggle-menu"><i class="fa-regular fa-bars"></i></label>
+      <img src="img/juana.png" alt="logo de juana" class="logo" />
+
+      <nav class="navbar">
+        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
         <input type="checkbox" id="toggle-menu" />
 
-        <ul class="nav-links">
-          <li><a href="#nosotros">sobre nosotros</a></li>
-          <li><a href="#galeria">galeria</a></li>
-          <li><a href="#precio">precio</a></li>
-          <li><a href="#contacto">contacto</a></li>
+        <ul class="navbar-list">
+          <li><a href="#hero">sobre nosotros</a></li>
+          <li><a href="#">galeria</a></li>
+          <li><a href="#">precio</a></li>
+          <li><a href="#NOMBRE">reservas</a></li>
         </ul>
       </nav>
     </header>
@@ -93,5 +93,91 @@
         </div>
       </div>
     </section>
+
+    <!--contact-->
+    <section class="reservas">
+      <div class="reservas-titulos">
+        <h2>¡¡Viajá con nosotros!!</h2>
+        <br />
+        <h2>
+          Al destino que sueñes, nosotros lo cumplimos y al mejor precio!!!
+        </h2>
+      </div>
+
+      <!--FORM-->
+      <div class="loginbox">
+        <img src="img/lj.jpg" class="user" />
+        <form
+          id="form"
+          action="mailto:mail-juana"
+          method="post"
+          enctype="text/plain"
+        >
+          <h2>completa tu reserva :</h2>
+          <br />
+          <!--falta mail juana-->
+          <input type="text" id="NOMBRE" placeholder="NOMBRE" required /><br />
+          <input type="text" placeholder="APELLIDO" required /><br />
+          <input type="text" placeholder="MAIL" required /><br />
+          <div class="text">
+            <label for="ch1"
+              ><h3>Lo que busques :</h3>
+              <br />
+              <input type="checkbox" checked /> Paquetes turisticos<br />
+              <input type="checkbox" value="ch1" /> Vuelos<br />
+              <input type="checkbox" /> Alojamientos<br />
+              <input type="checkbox" /> Alquiler de vehiculos<br />
+              <input type="checkbox" /> Excursiones<br />
+            </label>
+          </div>
+          <br /><label class="text">Fecha de reserva : </label><br />
+          <input type="date" required /><br />
+          <textarea
+            placeholder=" Dejanos tu comentario : "
+            cols="10"
+            rows="5"
+          ></textarea
+          ><br />
+          <input type="submit" value="enviar" /><br />
+        </form>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="pie-pagina">
+      <div class="container-box">
+        <section class="sec-map">
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6569.150623662998!2d-58.436078!3d-34.589611!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe6dedca219b59898!2sJUANA%20PALERMO!5e0!3m2!1ses!2sar!4v1670543342275!5m2!1ses!2sar"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </section>
+        <div class="box-card">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a class="fa-brands fa-square-facebook"></a>
+            <a class="fa-brands fa-instagram"></a>
+            <a class="fa-brands fa-square-twitter"></a>
+            <a class="fa-brands fa-youtube"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-box2">
+        <small
+          >&copy; 2023 <b><!--nombre de la empresa--></b> - Todos los derechos
+          reservados.</small
+        >
+        <small
+          ><p>created by <strong>Germán Apraiz.</strong></p>
+          <!--AGREGAR ENLACE A LA PAGINA DE LEVEL SI QUERES--></small
+        >
+      </div>
+    </footer>
   </body>
 </html>
