@@ -17,7 +17,7 @@
   }
 
   .hero-info p {
-    width: 60%;
+    width: 90%;
     max-width: 600px;
   }
 
@@ -28,19 +28,23 @@
   /*nav*/
   .navbar ul {
     background: var(--background-easy);
-    width: 40vw;
+    width: 40%;
     height: 300px;
     position: absolute;
     top: 100px;
     right: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     gap: 40px;
     box-shadow: 0 8px 8px var(--box-shadow);
-    display: none;
+    transform: translate(200%); /*para que se oculte a la derecha*/
+    transition: all 0.8s linear;
     border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 2;
   }
 
   .navbar i {
@@ -48,7 +52,10 @@
   }
 
   #toggle-menu:checked ~ .navbar-list {
-    display: flex;
+    transform: translate(
+      0%
+    ); /*para que aparezca desde la derecha, tmb se le puede agregar un transition al padre y al hijo*/
+    transition: all 0.8s linear;
   }
 
   /*cards*/
@@ -63,7 +70,7 @@
     text-align: center;
   }
 
-  /*contact-form*/
+  /*reservas*/
   .reservas-titulos {
     text-align: center;
   }
@@ -72,7 +79,7 @@
 /*============max-width: 768px=======*/
 /*===================================*/
 @media (max-width: 768px) {
-  /*contact-form*/
+  /*reservas*/
   .reservas {
     flex-direction: column;
     gap: 40px;
@@ -121,11 +128,8 @@
   }
 
   /*card*/
-  .card {
-    overflow-y: scroll;
-  }
 
-  /*contact-form*/
+  /*reservas*/
   .reservas-titulos {
     font: 0.9rem;
   }
