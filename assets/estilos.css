@@ -1,32 +1,36 @@
+/* font */
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Libre+Baskerville&family=Roboto&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: roboto, sans-serif;
-}
-
 :root {
-  /*background*/
+  /* bg colors */
   --background-hard: rgb(210, 174, 243);
   --background-easy: rgb(208, 201, 212);
   --background-footer: #0a141d;
   --background-loginbox: rgba(26, 26, 26, 0.5);
 
-  /*boxShadow*/
+  /* box Shadow */
   --box-shadow: rgba(0, 0, 0, 0.3);
   --box-shadow-submitForm: inset 0px 0px 4px 2px rgb(32, 23, 84);
   --text-shadow-grey: 2px 2px 2px rgb(76, 75, 77);
   --text-shadow-violet: 1px 2px 2px black, 0 0 25px blue, 0 0 5px;
   --hover-violet: rgb(73, 47, 219);
 
-  /*text*/
+  /* text colors */
   --textGrey: #4d4f4d;
   --orange: rgb(243, 135, 34);
   --text-white: white;
 
-  scroll-behavior: smooth; /*es para suavizar el scroll puede ir en el root o en html{}, scroll-padding-top: 100px; no lo uso xq el nav esta en sticky*/
+  scroll-behavior: smooth; /*es para suavizar el scroll puede ir en el root o en html{},
+  scroll-padding-top: 100px; no lo uso xq el nav esta en sticky
+  scroll-padding-top: 100px; /*es el height de mi navbar*/
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 /*=====hero==*/
@@ -55,11 +59,9 @@ main {
 .hero-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
   width: 50%;
-  text-align: center;
+  text-align: left;
 }
 
 .hero-info h1 {
@@ -135,7 +137,7 @@ main {
   box-shadow: 0 -8px 10px var(--box-shadow), 0 8px 8px var(--box-shadow);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2; /* Para que se vea siempre por encima */
 }
 
 .logo {
@@ -150,25 +152,29 @@ main {
   transition: all 0.3s ease;
 }
 
-.navbar {
+.navbar,
+.navbar-list {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.navbar i {
+.menu-label img {
   font-size: 36px;
   color: var(--text-white);
   display: none;
   cursor: pointer;
 }
 
-#toggle-menu {
+/* MENU HAMBURGUESA */
+#menu-toggle,
+#cart-toggle,
+.menu-label {
   display: none;
 }
 
 .navbar-list li {
-  display: inline-block;
+  /* display: inline-block; */
   padding: 0 20px;
 }
 
@@ -190,6 +196,45 @@ main {
 .navbar-list a:hover {
   color: var(--hover-violet);
   text-shadow: 2px 2px 2px rgb(159, 139, 233);
+}
+
+.cart-icon {
+  font-weight: 600;
+  border-radius: 10px;
+  height: 35px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* CARRITO */
+.cart {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  z-index: 2;
+}
+
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
+.cart h2 {
+  color: var(--text-white);
+  text-shadow: var(--text-shadow-grey);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cart-item img {
+  width: 200px;
+}
+
+#cart-toggle:checked + .cart {
+  display: flex;
 }
 
 /*======cards=======*/
@@ -411,9 +456,11 @@ form input {
 }
 
 .container-box2 {
+  max-width: 95%;
   background-color: var(--background-footer);
   padding: 15px 10px;
-  text-align: center;
+  text-align: right;
+  opacity: 0.6;
   color: var(--text-white);
 }
 

@@ -6,6 +6,9 @@
   }
 
   .hero-info {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 100%;
     order: 2;
   }
@@ -40,22 +43,23 @@
     text-decoration: none;
     gap: 40px;
     box-shadow: 0 8px 8px var(--box-shadow);
-    transform: translate(200%); /*para que se oculte a la derecha*/
-    transition: all 0.8s linear;
+    /*transform: translate(200%); /*para que se oculte a la derecha*/
+    /*transition: all 0.8s linear;*/
+    display: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    z-index: 2;
   }
 
-  .navbar i {
+  .menu-label img {
     display: block;
   }
 
-  #toggle-menu:checked ~ .navbar-list {
-    transform: translate(
-      0%
-    ); /*para que aparezca desde la derecha, tmb se le puede agregar un transition al padre y al hijo*/
-    transition: all 0.8s linear;
+  #menu-toggle:checked ~ .navbar-list {
+    display: flex;
+  }
+
+  .menu-label {
+    display: flex;
   }
 
   /*cards*/
@@ -102,11 +106,20 @@
   .red-social {
     flex-direction: row;
   }
+
+  .container-box2 {
+    text-align: center;
+    opacity: 1;
+  }
 }
 
 /*=======max-width: 576=========*/
 /*==============================*/
 @media (max-width: 576px) {
+  :root {
+    scroll-padding-top: 400px;
+  }
+
   /*hero*/
   .hero-info h1 {
     font-size: 28px;
@@ -117,14 +130,18 @@
   }
 
   /*nav*/
-  .navbar ul {
-    width: 100vw;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+  .header {
+    padding: 0 30px;
   }
 
   .logo {
     margin: 0;
+  }
+
+  .navbar ul {
+    width: 100vw;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
 
   /*card*/

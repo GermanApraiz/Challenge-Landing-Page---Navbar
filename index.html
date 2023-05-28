@@ -5,21 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--cdn font-awesome-->
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!--cdn-font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--link a css styles-->
+    <link rel="stylesheet" href="./assets/estilos.css" />
+    <link rel="stylesheet" href="./assets/queries.css" />
 
-    <link rel="stylesheet" href="estilos.css" />
-    <link rel="stylesheet" href="var.css" />
-    <link rel="icon" type="image/jpg" href="img/lj.jpg" />
+    <!--Link-favicon-->
+    <link rel="icon" type="image/jpg" href="./assets/img/lj.jpg" />
     <title id="logo juana">juana viajes</title>
   </head>
 
@@ -40,8 +34,11 @@
           <a href="#">Seleccioná tu destino</a>
         </div>
         <div class="hero-card">
-          <img src="img/lj.jpg" class="user" />
-          <img src="img/juanaViajes.jpg" alt="" />
+          <img src="./assets/img/lj.jpg" alt="logo de juana" class="user" />
+          <img
+            src="./assets/img/juanaViajes.jpg"
+            alt="imagen de juana viajes"
+          />
         </div>
       </section>
     </main>
@@ -49,18 +46,99 @@
     <!--nav-->
 
     <header class="header">
-      <img src="img/juana.png" alt="logo de juana" class="logo" />
-
+      <img src="./assets/img/juana.png" alt="logo de juana" class="logo" />
       <nav class="navbar">
-        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
-        <input type="checkbox" id="toggle-menu" />
-
+        <!-- Agregamos el label con la imagen del menu -->
+        <label for="menu-toggle" class="menu-label">
+          <img src="./assets/img/menu.png" alt="" class="menu-icon" />
+        </label>
+        <!-- Agregamos el input y lo linkeamos al label -->
+        <input type="checkbox" id="menu-toggle" />
+        <!-- Aca arranca el menu -->
         <ul class="navbar-list">
           <li><a href="#hero">sobre nosotros</a></li>
           <li><a href="#">galeria</a></li>
           <li><a href="#SIGUENOS">contacto</a></li>
           <li><a href="#NOMBRE">reservas</a></li>
         </ul>
+        <!-- /Agregamos input y label para el carrito/ -->
+        <label for="cart-toggle" class="cart-label">
+          <img
+            src="./assets/img/cart-icon.svg"
+            alt="Carrito de compras"
+            class="cart-icon"
+          />
+        </label>
+        <input type="checkbox" id="cart-toggle" />
+        <!-- Agregamos el carrito -->
+        <div class="cart">
+          <h2>Tus Viajes</h2><br>
+          
+          <div class="cart-item">
+            <img src="./assets/img/cart-machu-pichu.png" alt="imagen machu pichu del carrito" />
+              <div class="item-info">
+                <h3 class="item-title">Machu pichu</h3>
+                <p class="item-bid">10 Días / 8 Noches</p>
+                <span class="item-price">u$d 400 </span>
+              </div>
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+          <div class="cart-item">
+          <img src="./assets/img/cart-rio.webp" alt="imagen rio de janeiro del carrito" />
+          <div class="item-info">
+              <h3 class="item-title">Rio de janeiro</h3>
+              <p class="item-bid">10 Días / 8 Noches</p>
+              <span class="item-price">u$d 460 </span>
+            </div>
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+          <div class="cart-item">
+          <img src="./assets/img/cart-cordoba-oktoberfest.jpg" alt="imagen de oktoberfest, Cordoba del carrito" />
+          <div class="item-info">
+              <h3 class="item-title">Villa gral. belgrano, Cordoba</h3>
+              <p class="item-bid">3 Noches</p>
+              <span class="item-price">$ 51000 </span>
+            </div>
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+          <div class="cart-item">
+          <img src="./assets/img/cart-riviera-maya.jpg" alt="imagen de Riviera maya del carrito" />
+          <div class="item-info">
+              <h3 class="item-title">Riviera maya</h3>
+              <p class="item-bid">Oferta 12 noches</p>
+              <span class="item-price">u$d 643 </span>
+            </div>
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+          <div class="cart-item">
+          <img src="./assets/img/cart-disney.jpg" alt="imagen de disney del carrito" />
+          <div class="item-info">
+              <h3 class="item-title">Disney</h3>
+              <p class="item-bid">11 Noches</p>
+              <span class="item-price">$ 852580</span>
+            </div>
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
       </nav>
     </header>
 
@@ -115,7 +193,7 @@
 
       <!--FORM-->
       <div class="loginbox">
-        <img src="img/lj.jpg" class="user" />
+        <img src="./assets/img/lj.jpg" alt="logo juana" class="user" />
         <form
           id="form"
           action="mailto:mail-juana"
@@ -124,7 +202,6 @@
         >
           <h2>completa tu reserva :</h2>
           <br />
-          <!--falta mail juana-->
           <input type="text" id="NOMBRE" placeholder="NOMBRE" required /><br />
           <input type="text" placeholder="APELLIDO" required /><br />
           <input type="text" placeholder="MAIL" required /><br />
